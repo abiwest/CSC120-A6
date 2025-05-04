@@ -59,8 +59,7 @@ public class Engine implements EngineRequirements {
             currentFuelLevel -= 10; // removes 10 from the fuel level while it's running until theres no fuel left
             System.out.println("The train is moving! Remaining fuel = " + currentFuelLevel);
             return currentFuelLevel > 0;
-        }
-        else {
+        } else {
             System.out.println("Sorry, there's no fuel left!");
             return false;
         }

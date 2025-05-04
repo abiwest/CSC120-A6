@@ -45,20 +45,24 @@ public class TrainTest {
     // Passenger Tests
     @Test
     public void testPassengerBoardCarWithSpace() {
-        Car c = new Car(10);
-        Passenger x = new Passenger("Abi");
-        boolean result = x.boardCar(c);
+        Car c = new Car(2);
+        Passenger abi = new Passenger("Abi");
 
-        assertTrue(result);
+        abi.boardCar(c);
+        assertEquals(1, c.seatsRemaining());
     }
 
     @Test
     public void testPassengerBoardCarFull() {
-        Car c = new Car(0);
-        Passenger x = new Passenger("Abi");
-        boolean result = x.boardCar(c);
+        Car c = new Car(2);
+        Passenger abi = new Passenger("Abi");
+        Passenger abigail = new Passenger("Abigail");
 
-        assertFalse(result);
+        abi.boardCar(c);
+        abigail.boardCar(c);
+
+        assertEquals(0, c.seatsRemaining());
+        
     }
 
     // Train Tests

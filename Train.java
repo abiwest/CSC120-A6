@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Train {
+public class Train implements TrainRequirements{
     // Attributes
     private Engine engine;
     private ArrayList<Car> cars;
@@ -57,7 +57,7 @@ public class Train {
 
     /**
      * 
-     * @return prints a manifest of all the passenger(s) aboard the train
+     * For each car determines the number of seat and then prints a manifest of all the passengers aboard the train
      */
     public void printManifest() {
         for (int i = 0; i < cars.size(); i++) {

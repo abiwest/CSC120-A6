@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Car {
+public class Car implements CarRequirements{
     private ArrayList<Passenger> passengersOnboard;
     private int maxCapacity;
 
@@ -31,7 +31,7 @@ public class Car {
      * @param p (passenger)
      * @return t/f if the passenger is added
      */
-    public boolean addPassenger(Passenger p) {
+    public Boolean addPassenger(Passenger p) {
         if (passengersOnboard.size() < maxCapacity) { // checks if there's space
             passengersOnboard.add(p);
             return true; // the passenger can sucessfully be added
@@ -42,7 +42,7 @@ public class Car {
 
     /**
      * 
-     * @return n/a, this class member only prints the passenger manifest
+     * prints the passenger manifest for each car
      */
     public void printManifest() {
         if (passengersOnboard.size() < 1) {
@@ -50,7 +50,7 @@ public class Car {
         } else {
             System.out.println("Passengers aboard:");
             for (Passenger p : passengersOnboard) { // for loop that prints the name for each of the passengers
-                System.out.println(p);
+                System.out.println(p.getName());
             }
         }
     }
@@ -60,7 +60,7 @@ public class Car {
      * @param p (passenger)
      * @return t/f if the passenger is removed
      */
-    public boolean removePassenger(Passenger p) {
+    public Boolean removePassenger(Passenger p) {
         return passengersOnboard.remove(p); // will return true or false for the boolean if the passenger is removed
     }
 }
